@@ -3,12 +3,12 @@
 - task: AzureResourceGroupDeployment@2
   inputs:
   # Azure Details
-    azureSubscription: # string. Alias: ConnectedServiceName. Required. Azure subscription. 
+    azureSubscription: '2a0958e1-18b1-4f2c-8847-2393d588301d' 
     action: 'Create Or Update Resource Group' # 'Create Or Update Resource Group' | 'Select Resource Group' | 'Start' | 'Stop' | 'StopWithDeallocate' | 'Restart' | 'Delete' | 'DeleteRG'. Required. Action. Default: Create Or Update Resource Group.
     resourceGroupName: # string. Required. Resource group. 
     #location: # string. Required when action = Create Or Update Resource Group. Location. 
   # Template
-    templateLocation: 'Linked artifact' # 'Linked artifact' | 'URL of the file'. Required. Template location. Default: Linked artifact.
+    templateLocation: 'https://github.com/srisurya17/devops01/blob/main/template/template.json' # 'Linked artifact' | 'URL of the file'. Required. Template location. Default: Linked artifact.
     #csmFileLink: # string. Required when templateLocation = URL of the file. Template link. 
     #csmParametersFileLink: # string. Optional. Use when templateLocation = URL of the file. Template parameters link. 
     #csmFile: # string. Required when templateLocation = Linked artifact. Template. 
