@@ -1,11 +1,11 @@
 # Azure resource group deployment v2
 # Deploy an Azure Resource Manager (ARM) template to a resource group and manage virtual machines.
-- task: AzureResourceGroupDeployment@2
+- task: AzureResourceGroupDeployment
   inputs:
   # Azure Details
     azureSubscription: '2a0958e1-18b1-4f2c-8847-2393d588301d' 
     action: 'Create Or Update Resource Group' # 'Create Or Update Resource Group' | 'Select Resource Group' | 'Start' | 'Stop' | 'StopWithDeallocate' | 'Restart' | 'Delete' | 'DeleteRG'. Required. Action. Default: Create Or Update Resource Group.
-    resourceGroupName: # string. Required. Resource group. 
+    resourceGroupName: 'RG-devops01-cicd01'
     #location: # string. Required when action = Create Or Update Resource Group. Location. 
   # Template
     templateLocation: 'https://github.com/srisurya17/devops01/blob/main/template/template.json' # 'Linked artifact' | 'URL of the file'. Required. Template location. Default: Linked artifact.
