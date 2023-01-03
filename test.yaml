@@ -7,7 +7,7 @@ steps:
 - task: AzureResourceGroupDeployment@2
   inputs:
   # Azure Details
-    azureSubscription: 'github.com_srisurya17'
+    azureSubscription: 'srisurya17'
     action: 'Create Or Update Resource Group' # 'Create Or Update Resource Group' | 'Select Resource Group' | 'Start' | 'Stop' | 'StopWithDeallocate' | 'Restart' | 'Delete' | 'DeleteRG'. Required. Action. Default: Create Or Update Resource Group.
     resourceGroupName: 'RG-devops01-cicd01'
     location: 'East US' # string. Required when action = Create Or Update Resource Group. Location. 
