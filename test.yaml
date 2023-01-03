@@ -1,20 +1,24 @@
 # Azure resource group deployment v2
 # Deploy an Azure Resource Manager (ARM) template to a resource group and manage virtual machines.
-- task: AzureResourceGroupDeployment
+
+pool: 'Azure Pipelines'
+
+steps:
+- task: AzureResourceGroupDeployment@2
   inputs:
   # Azure Details
-    azureSubscription: '2a0958e1-18b1-4f2c-8847-2393d588301d' 
+    azureSubscription: 'github.com_srisurya17'
     action: 'Create Or Update Resource Group' # 'Create Or Update Resource Group' | 'Select Resource Group' | 'Start' | 'Stop' | 'StopWithDeallocate' | 'Restart' | 'Delete' | 'DeleteRG'. Required. Action. Default: Create Or Update Resource Group.
     resourceGroupName: 'RG-devops01-cicd01'
-    #location: # string. Required when action = Create Or Update Resource Group. Location. 
+    location: 'East US' # string. Required when action = Create Or Update Resource Group. Location. 
   # Template
-    templateLocation: 'https://github.com/srisurya17/devops01/blob/main/template/template.json' # 'Linked artifact' | 'URL of the file'. Required. Template location. Default: Linked artifact.
-    #csmFileLink: # string. Required when templateLocation = URL of the file. Template link. 
-    #csmParametersFileLink: # string. Optional. Use when templateLocation = URL of the file. Template parameters link. 
+    templateLocation: 'URL of the file' # 'Linked artifact' | 'URL of the file'. Required. Template location. Default: Linked artifact.
+    csmFileLink: 'https://github.com/srisurya17/devops01/blob/main/template/template.json' # string. Required when templateLocation = URL of the file. Template link. 
+    csmParametersFileLink: 'https://github.com/srisurya17/devops01/blob/main/template/parameters.json' # string. Optional. Use when templateLocation = URL of the file. Template parameters link. 
     #csmFile: # string. Required when templateLocation = Linked artifact. Template. 
     #csmParametersFile: # string. Optional. Use when templateLocation = Linked artifact. Template parameters. 
     #overrideParameters: # string. Override template parameters. 
-    deploymentMode: 'Incremental' # 'Incremental' | 'Complete' | 'Validation'. Required. Deployment mode. Default: Incremental.
+    deploymentMode: 'Validate' # 'Incremental' | 'Complete' | 'Validation'. Required. Deployment mode. Default: Incremental.
   # Advanced deployment options for virtual machines
     #enableDeploymentPrerequisites: 'None' # 'None' | 'ConfigureVMwithWinRM' | 'ConfigureVMWithDGAgent'. Enable prerequisites. Default: None.
     #teamServicesConnection: # string. Alias: deploymentGroupEndpoint. Required when enableDeploymentPrerequisites = ConfigureVMWithDGAgent. Azure Pipelines service connection. 
