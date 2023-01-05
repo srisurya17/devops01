@@ -18,7 +18,7 @@ steps:
     #csmFile: # string. Required when templateLocation = Linked artifact. Template. 
     #csmParametersFile: # string. Optional. Use when templateLocation = Linked artifact. Template parameters. 
     #overrideParameters: # string. Override template parameters. 
-    deploymentMode: 'Validate' # 'Incremental' | 'Complete' | 'Validation'. Required. Deployment mode. Default: Incremental.
+    deploymentMode: 'Validation'  # 'Incremental' | 'Complete' | 'Validation'. Required. Deployment mode. Default: Incremental.
   # Advanced deployment options for virtual machines
     #enableDeploymentPrerequisites: 'None' # 'None' | 'ConfigureVMwithWinRM' | 'ConfigureVMWithDGAgent'. Enable prerequisites. Default: None.
     #teamServicesConnection: # string. Alias: deploymentGroupEndpoint. Required when enableDeploymentPrerequisites = ConfigureVMWithDGAgent. Azure Pipelines service connection. 
